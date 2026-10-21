@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "site": {
+    "left": 4.07,
+    "path": 1.25,
+    "right": 5,
+    "depth": 8.7,
+    "treeX": 1.03,
+    "treeY": 1.09,
+    "treeD": 1.2,
+    "treeH": 0,
+    "slabSide": 0.5,
+    "slabGap": 2,
+    "slabDistance": 4.5,
+    "slabReference": "edge",
+    "facadeH": 0
+  },
+  "source": {
+    "id": "source",
+    "name": "Enchufes de fachada",
+    "kind": "power",
+    "x": 5.16,
+    "y": 0,
+    "z": 0,
+    "w": 0.18,
+    "d": 0.18,
+    "h": 0,
+    "rotation": 0,
+    "cx": 0,
+    "cy": 0,
+    "cz": 0
+  },
+  "props": [],
+  "routes": [],
+  "settings": {
+    "margin": 15,
+    "slack": 0.5,
+    "snap": 0.05,
+    "commercial": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ]
+  }
+}
