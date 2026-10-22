@@ -1,0 +1,48 @@
+{
+  "props": 9,
+  "calabazasHeight": 0.3,
+  "footprints": "Sin superposición, sendero libre y dentro del jardín",
+  "eye": [
+    4.695,
+    10.7,
+    1.6
+  ],
+  "visibility": [
+    {
+      "name": "Creper",
+      "blockedBy": []
+    },
+    {
+      "name": "Sillón",
+      "blockedBy": []
+    },
+    {
+      "name": "Barril",
+      "blockedBy": []
+    },
+    {
+      "name": "Demonio",
+      "blockedBy": []
+    },
+    {
+      "name": "Espantapájaros",
+      "blockedBy": []
+    },
+    {
+      "name": "Espantapájaros sentado",
+      "blockedBy": []
+    },
+    {
+      "name": "Calabaza",
+      "blockedBy": []
+    },
+    {
+      "name": "Calabaza copia",
+      "blockedBy": []
+    },
+    {
+      "name": "Calabaza copia copia",
+      "blockedBy": []
+    }
+  ]
+}

@@ -11,3 +11,12 @@
 - Sin errores de JavaScript capturados durante las pruebas.
 - SVG comprobado como XML; OBJ generado con vértices e índices válidos. Importación en Blender/Sweet Home 3D no ejecutada porque no están instalados. Se entrega OBJ estándar y SVG estándar.
 - Pendiente de datos reales: altura de fachada/palmera/enchufes, props definitivos, posibles desniveles/obstáculos no medidos, extremo preciso de la cota 4,50 m.
+
+## Copiar y pegar props
+
+- Añadidos botones Copiar prop / Pegar prop y Ctrl+C / Ctrl+V (también Meta en Mac). Se preserva copiar/pegar texto dentro de input, textarea, select y contenteditable.
+- 10 pruebas del modelo aprobadas, incluidas independencia de identificadores/propiedades, posiciones separadas al pegar repetidamente, conexiones conservadas y huellas dentro del terreno al pegar cerca de un borde.
+- Prueba de los manejadores reales de teclado en documento desechable: copia, dos pegados consecutivos, snapshot estable y bypass de campos de texto.
+- Prueba en navegador de copia del HTML en un origen HTTP de QA separado: una Calabaza original y dos copias, usando botones. No se leyó ni alteró el montaje abierto por el usuario en file://.
+- El control del navegador bloqueó la observación del archivo file:// por política de protocolo. La actualización se hizo en el archivo fuente y la verificación en un montaje artificial por HTTP.
+- El control de teclado de la herramienta intercepta Ctrl+V con su portapapeles virtual y no permite verificar el evento real en la página. Los atajos se verificaron con la prueba de manejadores, no se declara una prueba manual de esos atajos en navegador.

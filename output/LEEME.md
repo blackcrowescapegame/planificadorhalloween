@@ -4,6 +4,9 @@ Abre **Planificador-Halloween.html** con doble clic en Chrome, Edge o Firefox. E
 
 1. Revisa la pestaña **Medidas**. Todas las distancias están en metros. Casa arriba, calle abajo. El terreno mide 10,32 × 8,70 m.
 2. En **Props**, elige un tipo y pulsa **Añadir**. Mueve el objeto en el plano y ajusta sus dimensiones reales. Pulsa **Aplicar cambios** para confirmar los campos. Los tamaños de los presets son de referencia.
+
+Para repetir un objeto, selecciónalo y pulsa **Copiar prop** y luego **Pegar prop** tantas veces como necesites. También puedes usar **Ctrl+C / Ctrl+V** (Cmd+C / Cmd+V en Mac). Cada copia conserva las dimensiones, color, rotación y datos de su conector, con un identificador nuevo y una posición independiente. Los cables se conectan por separado. El botón **Duplicar** crea una copia directamente. Copiar props utiliza una copia interna del planificador, disponible durante esa sesión. Dentro de campos de texto o medidas, los atajos siguen copiando y pegando texto.
+
 3. Selecciona **Enchufes de fachada** para corregir posición y altura. El origen inicial es el centro geométrico de la fachada, X=5,16 e Y=0. La altura del enchufe todavía debe medirse.
 4. En **Cables**, elige origen y destino. Puedes conectar una caja de distribución al origen y luego conectar los dispositivos a esa caja.
 5. **Trazar desvíos** permite hacer clic a lo largo del recorrido. Cada clic añade un punto antes del destino. Pulsa **Terminar trazado** al finalizar. Arrastra los puntos para corregirlos y edita su altura si el cable pasa elevado.

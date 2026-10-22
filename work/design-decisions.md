@@ -24,6 +24,7 @@ Los props se representan con geometría funcional. Sin imágenes decorativas ni 
 | Naranja en selección e indicadores | Factory.ai | Estado activo | Selección y modo de trazado |
 | Alturas desconocidas en cero | Mediciones disponibles | Honestidad del modelo | Evitar inventar fachada/palmera |
 | Archivo autosuficiente y respaldo JSON | Solicitud de alternativa económica | Portabilidad | Uso sin cuenta ni suscripción |
+| Copiar/Pegar en fila de botones de Props | Editor existente y petición del usuario | Edición de objetos | Repetir el prop con los mismos atributos y posición independiente; respetar atajos de texto dentro de formularios |
 
 ## Recorridos
 Cada conexión se calcula por el suelo, con tramos verticales a los extremos y vértices adicionales de altura editable. La selección de origen admite enchufe o caja de distribución. No se interpreta una caja como nuevo enchufe sin representar su conexión.
