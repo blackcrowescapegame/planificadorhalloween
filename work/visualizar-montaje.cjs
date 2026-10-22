@@ -2,7 +2,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const C=require('../src/core.js');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'output');
 const html=fs.readFileSync(path.join(out,'Planificador-Montaje-ajustado.html'),'utf8');
-const app=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)][1][1];
+const app=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1];
 class Element {
  constructor(){this.listeners={};this.dataset={};this.style={setProperty(){}};this.classList={toggle(){},add(){}};this.checked=true;this.value='';this.innerHTML='';}
  addEventListener(type,fn){this.listeners[type]=fn;}
@@ -16,7 +16,8 @@ const document={querySelector(s){if(s==='dialog[open]')return null;if(!els.has(s
 const window={PlannerCore:C,innerWidth:1280,getSelection:()=>({toString:()=>''})};
 const writes=[],reads=[];
 vm.runInNewContext(app,{window,document,localStorage:{getItem(key){reads.push(key);return null;},setItem(...args){writes.push(args);}},CSS:{escape:s=>s},structuredClone,console,URL,Blob,setTimeout,confirm:()=>true});
-assert.deepEqual(reads,['halloween-planner-propuesta-20261021-v1']);
+assert.deepEqual(reads,[]);
+assert.deepEqual(writes,[]);
 assert.equal(window.HalloweenPlanner.model.props.length,9);
 assert.equal(window.HalloweenPlanner.model.props.filter(p=>p.name.startsWith('Calabaza')).every(p=>p.h===.3),true);
 for (const p of window.HalloweenPlanner.model.props) {

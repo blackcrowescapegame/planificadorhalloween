@@ -30,5 +30,5 @@ X se mide desde la izquierda; Y desde la fachada hacia la calle; Z es la altura 
 - La fachada, palmera y altura de los enchufes siguen pendientes. No se dedujeron alturas de la foto.
 - Tu archivo no contenía cables. La propuesta conserva ese estado; añade conexiones y recorridos reales en Cables.
 - La vista 3D y el OBJ muestran volúmenes a escala. La densidad de decoración, luces y figuras colgantes de la foto requiere elementos que no están en el inventario.
-- El HTML de la propuesta usa un guardado de navegador separado del planificador habitual. **Guardar montaje** permite descargar tus cambios.
+- El montaje y su historial se guardan en el servidor. **Guardar en servidor** crea versiones fechadas y **Versiones** permite restaurarlas. **Guardar montaje** permite descargar un JSON.
 - El original se conserva en **../montajes/Montaje-original.json**.

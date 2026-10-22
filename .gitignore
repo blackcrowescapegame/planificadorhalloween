@@ -1,0 +1,5 @@
+montajes/guardado-servidor/
+work/kit-local/
+deploy/
+tests/.tmp-versions-*/
+*.log

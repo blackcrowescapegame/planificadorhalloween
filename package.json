@@ -1,0 +1,12 @@
+{
+  "name": "planificadorhalloween",
+  "version": "0.2.0",
+  "private": true,
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "build": "node build.cjs",
+    "test": "node tests/core.test.cjs && node tests/clipboard-ui.test.cjs && node tests/history.test.cjs && node tests/server.test.cjs && node tests/history-ui.test.cjs"
+  },
+  "engines": {"node": ">=22"}
+}

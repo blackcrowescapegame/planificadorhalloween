@@ -25,11 +25,10 @@ jobs:
 
       - name: Test and build planner
         run: |
-          node tests/core.test.cjs
-          node tests/clipboard-ui.test.cjs
-          node build.cjs
-          mkdir -p deploy
-          cp output/Planificador-Halloween.html deploy/index.html
+          npm test
+          npm run build
+          node work/package-deploy.cjs
+          node work/check-deploy.cjs
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -59,6 +58,22 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DF4F03684B5E405CAA96107EB711C136 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B1FA7264EE444F4D9BF6F5D173D3BF94 }}
 
+      - name: Validate existing Linux App Service
+        id: existing-app
+        shell: bash
+        run: |
+          task_group=$(az webapp list --query "[?name=='blackcrow-planner-chile-prod'].resourceGroup | [0]" -o tsv)
+          if [ -z "$task_group" ]; then
+            echo "Could not locate the existing App Service resource group."
+            exit 1
+          fi
+          task_linux=$(az webapp show --name blackcrow-planner-chile-prod --resource-group "$task_group" --query reserved -o tsv)
+          if [ "$task_linux" != "true" ]; then
+            echo "The persistent /home storage setup requires the existing App Service to run Linux."
+            exit 1
+          fi
+          echo "resource-group=$task_group" >> "$GITHUB_OUTPUT"
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
@@ -66,3 +81,10 @@ jobs:
           app-name: 'blackcrow-planner-chile-prod'
           slot-name: 'Production'
           package: deploy
+
+      - name: Configure persistent JSON storage and Node startup
+        shell: bash
+        run: |
+          task_group="${{ steps.existing-app.outputs.resource-group }}"
+          az webapp config appsettings set --name blackcrow-planner-chile-prod --resource-group "$task_group" --settings PLANNER_DATA_DIR=/home/data/planificadorhalloween WEBSITES_ENABLE_APP_SERVICE_STORAGE=true --output none
+          az webapp config set --name blackcrow-planner-chile-prod --resource-group "$task_group" --startup-file "npm start" --output none

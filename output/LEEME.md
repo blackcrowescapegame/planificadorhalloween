@@ -1,6 +1,10 @@
 # Plano de Halloween
 
-Abre **Planificador-Halloween.html** con doble clic en Chrome, Edge o Firefox. El archivo funciona sin conexión, no necesita instalación, cuenta ni suscripción.
+Abre el sitio servido por Azure para guardar montajes e historial en el servidor. Los HTML también permiten editar, importar y exportar al abrirse como archivos; el guardado de versiones necesita el servidor.
+
+**Guardar en servidor** crea una versión JSON con fecha y hora. **Versiones** muestra los guardados y permite **Restaurar**. Al restaurar se conserva primero el montaje abierto, y la restauración queda como una versión nueva. El montaje y su historial se almacenan en el mismo App Service, en `/home/data/planificadorhalloween`, fuera de la carpeta que reemplaza cada despliegue. No se usa `localStorage` ni otro recurso Azure.
+
+**Aplicar cambios** actualiza el montaje abierto; pulsa **Guardar en servidor** para conservarlo al recargar. **Guardar montaje** y **Abrir montaje** siguen disponibles para descargar e importar JSON. Antes de actualizar una versión anterior del HTML, descarga cualquier trabajo pendiente.
 
 1. Revisa la pestaña **Medidas**. Todas las distancias están en metros. Casa arriba, calle abajo. El terreno mide 10,32 × 8,70 m.
 2. En **Props**, elige un tipo y pulsa **Añadir**. Mueve el objeto en el plano y ajusta sus dimensiones reales. Pulsa **Aplicar cambios** para confirmar los campos. Los tamaños de los presets son de referencia.
@@ -11,7 +15,7 @@ Para repetir un objeto, selecciónalo y pulsa **Copiar prop** y luego **Pegar pr
 4. En **Cables**, elige origen y destino. Puedes conectar una caja de distribución al origen y luego conectar los dispositivos a esa caja.
 5. **Trazar desvíos** permite hacer clic a lo largo del recorrido. Cada clic añade un punto antes del destino. Pulsa **Terminar trazado** al finalizar. Arrastra los puntos para corregirlos y edita su altura si el cable pasa elevado.
 6. Cambia a **Volúmenes 3D** para revisar el espacio. Arrastra o usa los controles para girar. Las alturas desconocidas de palmera y fachada comienzan en cero.
-7. Usa **Guardar montaje** para descargar un JSON y **Abrir montaje** para restaurarlo. El guardado automático depende del navegador y de la ruta del archivo: conserva el respaldo JSON.
+7. Usa **Guardar en servidor** para crear versiones persistentes y **Versiones** para recuperarlas. Usa **Guardar montaje** para descargar un JSON y **Abrir montaje** para importarlo.
 8. **Exportar** descarga el plano SVG, la lista de cables CSV y el modelo OBJ del montaje actual.
 
 ## Archivos incluidos
